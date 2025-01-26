@@ -15,6 +15,11 @@ public class StudentService {
   public List<Student> getStudent(){
     return this.studentList;
   }
+
+  public Optional<Student> getStudentById(Integer rollNo){
+    Optional<Student> student = studentList.stream().filter(stu->stu.getRollNo().equals(rollNo)).findFirst();
+    return student;
+  }
   public List<Student> addStudent(Student student){
     studentList.add(student);
     return this.studentList;
