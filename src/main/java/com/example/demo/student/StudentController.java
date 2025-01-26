@@ -24,7 +24,7 @@ public class StudentController {
 
   @GetMapping("/get/{id}")
   public Optional<Student> getStudentById(@PathVariable("id") Integer id){
-    return studentService.getStudent().stream().filter(student -> student.getRollNo().equals(id)).findFirst();
+    return studentService.getStudentById(id);
   }
   @PostMapping("/post")
   public List<Student> addStudent(@RequestBody Student student){
