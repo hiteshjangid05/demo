@@ -11,7 +11,6 @@ import java.util.*;
 public class StudentService {
   @Autowired
   StudentRepository studentRepository;
-  List<Student> studentList= new ArrayList<>(Arrays.asList(new Student(1,"A",20, LocalDate.of(2005, Month.APRIL,5)),new Student(2,"B",20,LocalDate.of(2005, Month.APRIL,5)),new Student(3,"C",30,LocalDate.of(2005, Month.APRIL,5))));
   public List<Student> getStudent(){
     return (List<Student>) studentRepository.findAll();
   }

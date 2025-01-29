@@ -15,20 +15,6 @@ public class Student {
 
   public Student() {
   }
-
-  public Student updateStudent(Student student){
-    this.name=student.getName();
-    this.age=student.getAge();
-    this.DOB=student.getDOB();
-    return this;
-  }
-  public Student(Integer rollNo,String name, Integer age, LocalDate DOB) {
-    this.rollNo = rollNo;
-    this.name = name;
-    this.age = age;
-    this.DOB = DOB;
-  }
-
   public String getName() {
     return name;
   }
