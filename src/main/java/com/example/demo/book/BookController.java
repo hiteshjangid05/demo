@@ -1,5 +1,7 @@
 package com.example.demo.book;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +19,15 @@ public class BookController {
     this.bookService = bookService;
   }
 
+  private static final Logger logger = LogManager.getLogger(BookController.class);
   @GetMapping("/get")
   public List<Book> getBooks(){
+    logger.info("All books are fetched from DB :"+bookService.getAllBooks());
     return bookService.getAllBooks();
   }
   @GetMapping("/get/{id}")
   public Optional<Book> getBookById(@PathVariable("id") Integer id){
+    logger.info("Book with id"+id+"="+bookService.getBookById(id));
     return bookService.getBookById(id);
   }
 

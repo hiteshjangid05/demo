@@ -5,13 +5,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Service
 public class BookService {
 
   @Autowired
   BookRepository bookRepository;
-
   public Optional<Book> addBook(Book book){
     bookRepository.save(book);
     return bookRepository.findById(book.getId());
